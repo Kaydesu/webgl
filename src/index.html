@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,49 @@
     <script src="../lib/jquery.js"></script>
     <script src="../lib/K3D.js"></script>
     <script src="../lib/K3DMath.js"></script>
+    <script src="./js/event.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <canvas id="canvas"></canvas>
+
+    <div class="container">
+        <div class="canvas_container">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="control">
+            <div class="title"> Camera control </div>
+            <div class="camera-parameter">
+                <div class="parameter-type">Eye location</div>
+                <div>
+                    PositionX: <input class="slider" type="range" id="positionX" min="-120" max="120">
+                </div>
+                <div>
+                    PositionY: <input class="slider" type="range" id="positionY" min="-120" max="120">
+                </div>
+                <div>
+                    PositionZ: <input class="slider" type="range" id="positionZ" min="-120" max="100" value="120">
+                </div>
+                <div>
+                    FoV: <input class="slider" type="range" id="fov" min="15" max="75" value="45">
+                </div>
+                <br><br><br>
+                <div class="parameter-type">Look at</div>
+                <div>
+                    CenterX: <input class="slider" type="range" id="centerX" min="-30" max="30" value="0">
+                </div>
+                <div>
+                    CenterY: <input class="slider" type="range" id="centerY" min="-30" max="30" value="0">
+                </div>
+                <div>
+                    CenterZ: <input class="slider" type="range" id="centerZ" min="-30" max="30" value="0">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 <script src="main.js"></script>
+
 </html>

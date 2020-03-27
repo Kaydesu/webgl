@@ -1,3 +1,44 @@
+body {
+    background-color: whitesmoke;
+}
+
+.container {
+    margin: auto;
+    width: 95%;
+
+    display: flex;
+}
+
+.canvas-container {
+    flex: 1;
+}
+
 canvas {
     border: 1px black solid;
+}
+
+.control {
+    flex: 1;
+    border: 1px lightgray solid;
+    background-color: lightyellow;
+
+    margin-left: 15px;
+    padding-left: 25px;
+}
+
+.title {
+    text-align: center;
+    font-size: 30px;
+}
+
+.camera-parameter {
+
+}
+
+.slider {
+    width: 300px;
+}
+
+.parameter-type {
+    margin-left: 175px;
 }
