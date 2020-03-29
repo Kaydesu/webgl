@@ -43,9 +43,8 @@ function init() {
     );
 
     triangle = new K3D.Mesh(triangle_geometry, material1);
-    // scene.add(triangle);
+    scene.add(triangle);
 
-    // sphere.rotate.x = -90;
     renderer = new K3D.RenderEngine(canvas);
 }
 
@@ -68,4 +67,4 @@ function animate() {
 }
 
 init();
-// animate();
+animate();
