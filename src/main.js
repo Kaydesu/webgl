@@ -16,11 +16,9 @@ function init() {
     camera.eye.z = 120;
 
     material1 = K3D.BasicMaterial([
-        [1, 0.2, 0.1],
-        [0.2, 0.3, 0.1],
-        [0.3, 0.5, 0.1],
+        [0.2, 0.8, 0.3],
         [0.2, 0.2, 0.5],
-        [0.2, 0.4, 0.3]
+        [0.6, 0.8, 0.1],
     ], SHADE_OFF);
 
     triangle_geometry = K3D.Triangle(
@@ -30,7 +28,28 @@ function init() {
     );
 
     triangle = new K3D.Mesh(triangle_geometry, material1);
+
+    box_geometry = K3D.BoxGeometry(35);
+    box = new K3D.Mesh(box_geometry, material1);
+    box.draw_triangles = false;
+    box.draw_points = true;
+    box.draw_lines = true;
+
+    sphere_geometry = K3D.UVSphereGeometry(25, 3, 3);
+    sphere = new K3D.Mesh(sphere_geometry, material1);
+    sphere.draw_triangles = true;
+    sphere.draw_points = true;
+    sphere.draw_lines = true;
+
+    cone_geometry = K3D.ConeGeometry(25, 55, 5);
+    cone = new K3D.Mesh(cone_geometry, material1);
+    cone.draw_triangles = true;
+    cone.draw_points = true;
+    cone.draw_lines = true;
+    
+    // triangle = new K3D.Mesh(triangle_geometry, material1);
     scene.add(triangle);
+    // scene.add(triangle);
 
     renderer = new K3D.RenderEngine(canvas);
 }
@@ -49,8 +68,8 @@ function animate() {
     eventUpdate();
 
     time += 0.05;
-    triangle.rotate.z += 0.8;
-    triangle.rotate.x += 0.8;
+    sphere.rotate.x += 0.2;
+    sphere.rotate.z -= 0.5;
     renderer.render(scene, camera);
 }
 
